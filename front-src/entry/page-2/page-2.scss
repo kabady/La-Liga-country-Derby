@@ -1,0 +1,45 @@
+@function r($rem) {
+  @return $rem / 640 * 3.2 * 1rem;
+}
+.page-2{
+  .page-container{
+    height: r(1025);
+  }
+  .input-container{
+    margin: r(414 - 111) auto 0;
+    width: r(440);
+    height: r(70);
+    border: 1px solid #626262;
+    input{
+      display: block;
+      width: 100%;
+      height: r(40);
+      padding: r(15) 0;
+      border: 0;
+      margin: 0;
+      outline: 0;
+      font-size: r(28);
+      line-height: r(40);
+      color: #fff;
+      text-align: center;
+      background-color: rgba($color: #000, $alpha: .5);
+    }
+  }
+  .logo-select-container{
+    margin-top: r(644 - 414 - 70);
+    font-size: 0;
+    .left-select, .right-select{
+      display: inline-block;
+      width: 50%;
+      img{
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+  .action-enter-next{
+    margin: r(964 - 644 - 250 ) auto 0;
+    width: r(440);
+    height: r(90);
+  }
+}

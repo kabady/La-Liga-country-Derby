@@ -1,0 +1,23 @@
+.page{
+    position: relative;
+    overflow: hidden;
+    display: none;
+    img.bg{
+        width: 100%;
+        display: block;
+    }
+    .page-container{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+    }
+    .action-event{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+    }
+}
