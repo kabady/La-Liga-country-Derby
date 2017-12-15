@@ -6,7 +6,7 @@ class pagesItem{
 }
 class routerPathItem{
   id: string;
-  handle: () => void;
+  handle: (argu: Array<any>) => void;
 }
 export class Routes {
   pages: Array<pagesItem> = [];
@@ -34,10 +34,10 @@ export class Routes {
       handle: handle
     })
   }
-  go(sign: string){
+  go(sign: string, argu: Array<any> = []){
     for(let i = this.routerPath.length - 1; i >= 0; i--){
       if(this.routerPath[i].id == sign){
-        this.routerPath[i].handle();
+        this.routerPath[i].handle(argu);
         return
       }
     }

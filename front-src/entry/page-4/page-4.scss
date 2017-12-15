@@ -1,0 +1,9 @@
+@function r($rem) {
+    @return $rem / 640 * 3.2 * 1rem;
+}
+.page-4{
+    .page-container{
+        height: r(1025);
+    }
+   
+}

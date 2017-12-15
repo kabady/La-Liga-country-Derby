@@ -10,4 +10,26 @@
         width: r(440);
         height: r(90);
     }
+    .question-title-container{
+        height: r(350 + 10 + 110);
+        // max-height: r(350 + 80 + 110);
+        // padding-top: r(70);
+        // padding-bottom: r(70);
+        position: relative;
+        margin: r(120) auto 0;
+        width: r(550);
+    }
+    .question-title{
+        position: absolute;;
+        top: 50%;
+        transform: translate(0, -50%);
+        width: 100%;
+        margin: 0;
+        font-size: r(28);
+        line-height: 1.5;
+        color: #fff;
+    }
+    .action-btn{
+        display: none;
+    }
 }

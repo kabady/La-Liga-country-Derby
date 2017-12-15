@@ -1,3 +1,6 @@
+export let RealMadrid: string = 'Real-Madrid';
+export let Barcelona: string = 'Barcelona';
+
 import './page-2.scss'
 
 import { Page } from "../page";
@@ -35,29 +38,38 @@ export class Page2 extends Page {
     });
     let logoLeft = this.DOMAPI.find('.left-select img');
     logoLeft.on('click', () => {
-      teamSelect = 'Real-Madrid'
+      teamSelect = RealMadrid;
       logoRight.setAttr('src', `${assetMap.logoRight}`);
       logoLeft.setAttr('src', `${assetMap.logoLeftSelected}`);
     });
     let logoRight = this.DOMAPI.find('.right-select img')
     logoRight.on('click', () => {
-      teamSelect = 'Barcelona'
+      teamSelect = Barcelona;
       logoLeft.setAttr('src', `${assetMap.logoLeft}`);
       logoRight.setAttr('src', `${assetMap.logoRightSelected}`);
     });
   }
   setBackground():void{
-    let background = DomAPI.CreateByHtmlString(`<img class="bg" src=${assetMap.bgPage2}>`);
+    let background = DomAPI.CreateByHtmlString(`
+      <img class="bg" src=${assetMap.bgCommon}>
+      <img class="bg mask" src=${assetMap.bgPage2}>
+    `);
     this.DOMAPI.appendBefore(background.getElemList());
     this.DOMAPI.find('.left-select img').setAttr('src', `${assetMap.logoLeft}`);
     this.DOMAPI.find('.right-select img').setAttr('src', `${assetMap.logoRight}`);
   }
 }
+
 let userName: string = '';
-export function getUserName(){
-  return userName;
-}
 let teamSelect: string = ''
-export function getUserTeam(){
-  return teamSelect;
+export function getUserNameAndTeam(){
+  return {
+    userName: userName,
+    teamSelect: teamSelect
+  }
 }
+export function clearData(): void{
+  userName = '';
+  teamSelect = '';
+}
+

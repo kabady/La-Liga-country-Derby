@@ -9,11 +9,19 @@ export abstract class Page {
     this.setBackground();
   }
   show(): void {
+    this.showbefore();
     this.DOMAPI.css({ display: 'block' })
+    this.showafter();
   }
   hide(): void {
+    this.hidebefore();
     this.DOMAPI.css({ display: 'none' })
+    this.hideafter();
   }
+  showbefore(): void{}
+  hidebefore(): void{}
+  showafter(): void{}
+  hideafter(): void{}
   abstract initPageElem(): void;
   abstract initPageEvent(): void;
   abstract setBackground(): void;
