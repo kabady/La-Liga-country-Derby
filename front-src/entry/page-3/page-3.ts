@@ -2,7 +2,7 @@ import { RealMadrid, Barcelona, getUserNameAndTeam } from '../page-2/page-2';
 
 import './page-3.scss'
 
-import { Page } from "../page";
+import { Page } from "../../lib/Page-0.1.1";
 import { DomAPI } from "../../lib/DomAPI-0.0.4";
 import { assetMap } from "../assetUtil";
 import { routes } from '../router';

@@ -45,7 +45,10 @@ module.exports = {
             verbose: true, // Write logs to console.
             dry: false // Do not delete anything, good for testing.
         })
-    ]
+    ],
+    externals: {
+        'createjs': 'createjs'
+    }
 }
 
 var express = require('express');

@@ -54,7 +54,7 @@ export class DomAPI {
    * @returns 
    * @memberof DomAPI
    */
-  getEl(index: number) {
+  getEl(index: number): Element {
     let list: Array<Element> = this.getElemList();
     return list[index];
   }
@@ -320,6 +320,22 @@ export class DomAPI {
         ClassCustomize.addClass(elem, className);
       }
     })
+  }
+  /**
+   * 显示元素
+   * 
+   * @memberof DomAPI
+   */
+  show(): void{
+    this.css({display: 'block'});
+  }
+  /**
+   * 隐藏元素
+   * 
+   * @memberof DomAPI
+   */
+  hide(): void{
+    this.css({display: 'none'});
   }
   /**
    * 通过字符串创建DomAPI类

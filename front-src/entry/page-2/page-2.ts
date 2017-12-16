@@ -2,11 +2,10 @@ export let RealMadrid: string = 'Real-Madrid';
 export let Barcelona: string = 'Barcelona';
 
 import './page-2.scss'
-
-import { Page } from "../page";
 import { DomAPI } from "../../lib/DomAPI-0.0.4";
 import { assetMap } from "../assetUtil";
 import { routes } from '../router';
+import { Page } from '../../lib/Page-0.1.1';
 
 let HTML: string = require('./page-2.html');
 
@@ -63,6 +62,12 @@ export class Page2 extends Page {
 let userName: string = '';
 let teamSelect: string = ''
 export function getUserNameAndTeam(){
+  try{
+    let input: any = new DomAPI('.page-2 .input-container input').getEl(0);
+    userName = input.value;
+  }catch(e){
+    throw new Error('获取名字 input 值错误')
+  }
   return {
     userName: userName,
     teamSelect: teamSelect

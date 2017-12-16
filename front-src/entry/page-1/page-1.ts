@@ -1,9 +1,9 @@
 import './page-1.scss'
 
-import { Page } from "../page";
 import { DomAPI } from "../../lib/DomAPI-0.0.4";
 import { assetMap } from "../assetUtil";
 import { routes } from '../router';
+import { Page } from '../../lib/Page-0.1.1';
 
 let HTML: string = require('./page-1.html');
 

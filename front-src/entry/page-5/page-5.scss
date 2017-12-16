@@ -1,0 +1,31 @@
+@function r($rem) {
+    @return $rem / 640 * 3.2 * 1rem;
+}
+.page-5{
+    .page-container{
+        height: r(1025);
+    }
+    .action-enter-next{
+        margin: r(964 - 111) auto 0;
+        width: r(440);
+        height: r(90);
+    }
+    #canvas, .canvas{
+        margin: r(145) auto 0;
+        display: block;
+        width: r(352);
+        height: r(624);
+    }
+    .canvas-container{
+        height: r(624);
+    }
+    .prompt{
+        margin-top: r(30);
+        color: #6db8ff;
+        text-align: center;
+        font-size: r(20);
+    }
+    .again-btn{
+        margin-top: r(45);
+    }
+}

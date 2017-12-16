@@ -1,4 +1,4 @@
-import { Page } from "./page";
+import { Page } from "../lib/Page-0.1.1";
 
 class pagesItem{
   id: string;
@@ -12,8 +12,9 @@ export class Routes {
   pages: Array<pagesItem> = [];
   routerPath: Array<routerPathItem> = [];
   constructor() {
-      
+    
   }
+  
   set(pageName: string, page: Page){
     this.pages.push({
       id: pageName,

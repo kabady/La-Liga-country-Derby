@@ -1,9 +1,84 @@
 @function r($rem) {
-    @return $rem / 640 * 3.2 * 1rem;
+  @return $rem / 640 * 3.2 * 1rem;
 }
-.page-4{
-    .page-container{
-        height: r(1025);
+
+.page-4 {
+  .page-container {
+    height: r(1025);
+  }
+  .action-enter-next{
+    margin-top: r(106);
+  }
+  .picture-container{
+    width: r(544);
+    height: r(306);
+    margin: r(368) auto 0;
+    background: url(../../_asset/transparent_show.jpg);
+    position: relative;
+    .success-mask{
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: relative;
+      z-index: 1;
     }
-   
+    .user-img-container{
+      position: relative;
+      z-index: 1;
+      img{
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .touch-view, .select-file{
+      z-index: 1;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: transparent;
+      padding: 0;
+      border: 0;
+      margin: 0;
+      opacity: 0;
+      box-sizing: border-box;
+    }
+    .select-file-container{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: rgba($color: #000000, $alpha: .7) url(../../_asset/add_picture.png) no-repeat center center;
+      background-size: r(81) r(115);
+      z-index: 1;
+    }
+    
+    &.real-madrid{
+      position: relative;
+      overflow: hidden;
+      .user-img-container{
+        position: absolute;
+        width: r(64);
+        height: r(90);
+        left: r(216);
+        top: r(58);
+      }
+    }
+    &.barcelona{
+      position: relative;
+      overflow: hidden;
+      .user-img-container{
+        position: absolute;
+        width: r(54);
+        height: r(72);
+        left: r(281);
+        top: r(28);
+      }
+    }
+  }
 }
