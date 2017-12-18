@@ -1,3 +1,4 @@
+import '../js-lib/build/reset-1.0.0.css'
 import '../style/style.scss';
 
 import { RemInit } from '../lib/Rem';
@@ -8,7 +9,6 @@ import { Page2 } from './page-2/page-2';
 import { Page3 } from './page-3/page-3';
 import { Page4 } from './page-4/page-4';
 import { Page5 } from './page-5/page-5';
-import 'createjs';
 
 function initApp(){
   RemInit();

@@ -62,7 +62,6 @@ export class Page5 extends Page {
     }
     imageList.push(otherNews);
 
-
     DomAPI.CreateByElemList(imageList).on('load', () => {
       imageList.pop();
       if(imageList.length == 0){
