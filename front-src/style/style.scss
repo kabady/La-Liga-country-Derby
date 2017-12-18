@@ -20,11 +20,11 @@
     border: 1px solid #626262;
     font-size: r(28);
     color: #fff;
-    &.default {
-      background: #fff;
-      color: #000;
-      border: 1px solid #fff;
-    }
+    // &.default {
+    //   background: #fff;
+    //   color: #000;
+    //   border: 1px solid #fff;
+    // }
     &.pointer-events-none {
       pointer-events: none;
       color: rgba($color: #fff, $alpha: .3);

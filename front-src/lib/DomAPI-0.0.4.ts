@@ -119,6 +119,17 @@ export class DomAPI {
     })
   }
   /**
+   * 把元素插入到当前元素的前面
+   * 
+   * @param {Array<Element>} elemList 
+   * @memberof DomAPI
+   */
+  insertFront(elemList: Array<Element>): void{
+    elemList.forEach( newElem => {
+      this.getElemList().forEach( meElem => meElem.parentElement.insertBefore(newElem, meElem) );
+    });
+  }
+  /**
    * 把当前元素从渲染树中删除
    * 
    * @memberof DomAPI
@@ -138,6 +149,19 @@ export class DomAPI {
    */
   replace(newElem: Element) {
     this.getElemList().forEach(oldElem => oldElem.parentElement.replaceChild(newElem, oldElem));
+  }
+  /**
+   * 获取元素的父元素
+   * 
+   * @returns {DomAPI} 
+   * @memberof DomAPI
+   */
+  parent(): DomAPI{
+    let parentList: Array<Element> = [];
+    this.getElemList().forEach(elem => {
+      parentList.push(elem.parentElement)
+    });
+    return DomAPI.CreateByElemList(parentList);
   }
   /**
    * 给当前元素添加处理事件

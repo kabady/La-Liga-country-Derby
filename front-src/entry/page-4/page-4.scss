@@ -8,6 +8,22 @@
   }
   .action-enter-next{
     margin-top: r(106);
+    position: relative;
+  }
+  .select-file{
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: transparent;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    opacity: 0;
+    box-sizing: border-box;
   }
   .picture-container{
     width: r(544);

@@ -19,6 +19,7 @@ class QuestionBtn{
   static WORD_GAME_OVER = 'WORD_GAME_OVER';
   static QUESTION_NEXT = 'QUESTION_NEXT';
   static CLOSE_FAIL = 'CLOSE_FAIL';
+  static AGAIN_GAME = 'AGAIN_GAME';
 
   constructor(txt: string, type: string){
     this.txt = txt;
@@ -81,7 +82,10 @@ QuestionObj[RealMadrid] = RealMadridQuestion;
 let BarcelonaQuestion: Array<Question> = [{
   title: `作为足坛炙手可热的新星，你在今年夏天来到了巴塞罗那，在梦之队的半个赛季，你发挥尚称良好，但是离出类拔萃还有些距离，和队友的配合也总差那么一点意思。<br>
   马上就要国家德比了，你们正在紧张的训练和备战，在某一天训练结束后，巴尔韦德邀请所有球员去他家吃晚饭，你会选择：`,
-  btns: [new QuestionBtn('A. 教练邀请怎能不去！', QuestionBtn.ANSWER_RIGHT), new QuestionBtn('B. 我和你很熟吗，不去！', QuestionBtn.ANSWER_FAIL)],
+  btns: [
+    new QuestionBtn('A. 教练邀请怎能不去！', QuestionBtn.ANSWER_RIGHT),
+    new QuestionBtn('B. 我和你很熟吗，不去！', QuestionBtn.ANSWER_FAIL)
+  ],
   fail: 'xxx没有在国家德比中出场，半赛季后被甩卖到其他球队'
 }, {
   title: `当天晚上，你如约来到巴尔韦德家，发现大部分球员已经到了，你和队友们一边烤肉一边聊天，气氛十分融洽。<br>
@@ -134,9 +138,11 @@ export class Page3 extends Page {
   prevQuestionBtn: DomAPI;
   successQustionBtn: DomAPI;
   closeFailBtn: DomAPI;
-  
+  aganElemBtn: DomAPI;
+
   closeFialBtn = new QuestionBtn('上一题', QuestionBtn.CLOSE_FAIL);
   successBtn = new QuestionBtn('上一题', QuestionBtn.WORD_GAME_OVER);
+  againBtn = new QuestionBtn('再玩一次', QuestionBtn.AGAIN_GAME);
   constructor() {
     super();
   }
@@ -150,8 +156,13 @@ export class Page3 extends Page {
     this.prevQuestionBtn = this.DOMAPI.find('.action-btn.prev-question');
     this.closeFailBtn = this.DOMAPI.find('.action-btn.close-fail');
     this.successQustionBtn = this.DOMAPI.find('.success-question');
+    this.aganElemBtn = this.DOMAPI.find('.again-btn');
+    
   }
   initPageEvent(): void{
+    this.aganElemBtn.on('click', () => {
+      routes.go('page2');
+    })
     this.answer_A.on('click', ev => {
       this.answer_A.containClassFilter('default', 
       () => {
@@ -192,7 +203,7 @@ export class Page3 extends Page {
     let question = this.questionList[this.curQuestionIndex];
     this.showQuestion({
       title: question.fail.replace('xxx', getUserNameAndTeam().userName),
-      btns: [this.closeFialBtn]
+      btns: [this.againBtn]
     })
   }
   showSuccessResult(){
@@ -203,7 +214,8 @@ export class Page3 extends Page {
     })
   }
   nextQuestion(qustionIndex?: number): void{
-    qustionIndex = qustionIndex || this.curQuestionIndex;
+    if(qustionIndex == undefined) qustionIndex = this.curQuestionIndex;
+    
     qustionIndex++;
     if(qustionIndex > this.questionList.length -1 ){
       qustionIndex = this.questionList.length -1;
@@ -237,21 +249,26 @@ export class Page3 extends Page {
     this.prevQuestionBtn.css({ display: 'none' });
     this.successQustionBtn.css({ display: 'none' });
     this.closeFailBtn.css({display: 'none'});
+    this.aganElemBtn.css({display: 'none'});
   }
   showQuestionBtns(btn: QuestionBtn){
     if(btn.type == QuestionBtn.ANSWER_FAIL){
       this.answer_A.text(btn.txt);
       this.answer_A.css({ display: 'block' })
+      this.answer_A.insertFront([this.answer_B.getEl(0)])
     }else if(btn.type == QuestionBtn.ANSWER_RIGHT || btn.type == QuestionBtn.QUESTION_NEXT){
       this.answer_B.text(btn.txt);
       this.answer_B.css({ display: 'block' })
       this.answer_B.addClass('default');
+      this.answer_B.insertFront([this.answer_A.getEl(0)])
     }else if(btn.type == QuestionBtn.PREV_QUESTION){
       this.prevQuestionBtn.css({ display: 'block' })
     }else if(btn.type == QuestionBtn.WORD_GAME_OVER){
       this.successQustionBtn.css({ display: 'block' })
     }else if(btn.type == QuestionBtn.CLOSE_FAIL){
       this.closeFailBtn.css({display: 'block'});
+    }else if(btn.type == QuestionBtn.AGAIN_GAME){
+      this.aganElemBtn.css({display: 'block'});
     }
   }
   setTeamQuestion(questionList: Array<Question>){

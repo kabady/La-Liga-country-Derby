@@ -26,11 +26,13 @@ export function setLastImage(image, handle){
 export class Page4 extends Page {
   personMakElem: DomAPI;
   fileInput: DomAPI;
+  fileInput2: DomAPI;
   updateBtn: DomAPI;
   userImgMove: any;
   userImage: HTMLImageElement;
   userOperteElem: DomAPI;
   fileInputContainer: DomAPI;
+  fileInput2Container: DomAPI;
   userImageContainer: DomAPI;
   pictureContainer: DomAPI;
   canvasImgRender: any;
@@ -45,6 +47,8 @@ export class Page4 extends Page {
     this.personMakElem = this.DOMAPI.find('.picture-container .success-mask');
     this.fileInputContainer = this.DOMAPI.find('.select-file-container');
     this.fileInput = this.DOMAPI.find('.select-file');
+    this.fileInput2Container = this.DOMAPI.find('.action-again-select');
+    this.fileInput2 = this.DOMAPI.find('.action-again-select .select-file');
     this.updateBtn = this.DOMAPI.find('.action-enter-next');
     this.userOperteElem = this.DOMAPI.find('.touch-view');
     this.userImageContainer = this.DOMAPI.find('.user-img-container');
@@ -66,12 +70,17 @@ export class Page4 extends Page {
     this.fileInput.on('change', e => {
       this.imgSelected(e.target || e.srcElement)
     })
+    this.fileInput2.on('change', e => {
+      this.imgSelected(e.target || e.srcElement)
+    })
   }
   imgSelected(target){
     this.fileInputContainer.hide();
     this.updateBtn.removeClass('pointer-events-none');
+    this.fileInput2Container.removeClass('pointer-events-none');
     this.getFileImg(target, (img) => {
       this.userImage = img;
+      this.userImageContainer.empty();
       this.userImageContainer.append([this.userImage])
       this.userImgMove = new ImgMove(this.userImage, null, this.userOperteElem.getEl(0));
 
@@ -127,6 +136,7 @@ export class Page4 extends Page {
     }
     this.userImageContainer.empty();
     this.updateBtn.addClass('pointer-events-none');
+    this.fileInput2Container.addClass('pointer-events-none');
     this.fileInputContainer.show();
     this.pictureContainer.addClass(getUserNameAndTeam().teamSelect.toLocaleLowerCase());
     if(getUserNameAndTeam().teamSelect == Barcelona){

@@ -27,9 +27,9 @@ export function ajaxSend(handle: () => void) {
           let _window: any = window;
           _window.ajax_callback = _window.ajax_callback || {};
           if(getUserNameAndTeam().teamSelect == RealMadrid){
-            _window.ajax_callback.send_complete_ok && _window.ajax_callback.send_complete_ok('realmadrid');
+            _window.ajax_callback.send_complete_ok && _window.ajax_callback.send_complete_ok('realmadrid', getUserNameAndTeam().userName);
           }else if(getUserNameAndTeam().teamSelect == Barcelona){
-            _window.ajax_callback.send_complete_ok && _window.ajax_callback.send_complete_ok('fcbarcelona');
+            _window.ajax_callback.send_complete_ok && _window.ajax_callback.send_complete_ok('fcbarcelona', getUserNameAndTeam().userName);
           }
         }catch(e){
           console.log('send_complete_ok error run')
