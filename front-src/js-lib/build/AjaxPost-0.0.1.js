@@ -60,7 +60,6 @@ export function AjaxPost(options) {
     function AJAX_Send(){
         if (Cache.state === Cache.STATE_OPENED) {
             Cache.beforeSend();
-            console.log(Cache.reqData)
             Cache.xmlhttp.send(Cache.reqData);
             Cache.afterSend();
             readystatechange(Cache.STATE_HEADERS_RECEIVED)
@@ -249,7 +248,6 @@ export function JSONP(options){
 }
 export function AjaxData(data, type) {
     if(data instanceof FormData){
-        console.log(1111)
         return data;
     }
     type = type || ''
