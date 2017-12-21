@@ -47,7 +47,7 @@ let RealMadridQuestion: Array<Question> = [{
   btns: [
     new QuestionBtn('A. 训练这么累，早点回去休息吧', QuestionBtn.ANSWER_FAIL),
     new QuestionBtn('B. 和C罗一起训练！', QuestionBtn.ANSWER_RIGHT),
-    new QuestionBtn('上一题', QuestionBtn.PREV_QUESTION)
+    // new QuestionBtn('上一题', QuestionBtn.PREV_QUESTION)
   ],
   fail: 'xxx训练态度消极，主教练决定将其下放'
 }, {
@@ -55,7 +55,7 @@ let RealMadridQuestion: Array<Question> = [{
   转眼就到了国家德比，你并没有出现在赛前的首发名单中，不过在比赛开始前，齐达内悄悄把你叫到了一边，告诉你一旦情况有变，你是他的第一选择！`,
   btns: [
     new QuestionBtn('球赛开始', QuestionBtn.QUESTION_NEXT),
-    new QuestionBtn('上一题', QuestionBtn.PREV_QUESTION)
+    // new QuestionBtn('上一题', QuestionBtn.PREV_QUESTION)
   ]
 }, {
   title: `这场国家德比对于皇马而言并不算顺利，梅西早早在伯纳乌打入一球，随后贝尔又受伤离场，齐达内什么也没说，拍拍你的肩膀，就让你上场了。<br>
@@ -63,7 +63,7 @@ let RealMadridQuestion: Array<Question> = [{
   btns: [
     new QuestionBtn('A. 不管那么多，先射了再说；', QuestionBtn.ANSWER_FAIL),
     new QuestionBtn('B. 皮克这么大块头，先躲了再说；', QuestionBtn.ANSWER_RIGHT),
-    new QuestionBtn('上一题', QuestionBtn.PREV_QUESTION)
+    // new QuestionBtn('上一题', QuestionBtn.PREV_QUESTION)
   ],
   fail: 'xxx为射门奋不顾身，重伤离场直接宣布退役'
 }, {
@@ -72,7 +72,7 @@ let RealMadridQuestion: Array<Question> = [{
   btns: [
     new QuestionBtn('A. 看着C罗罚球就好了', QuestionBtn.ANSWER_FAIL),
     new QuestionBtn('B. 关键时刻看我的，我要罚球！', QuestionBtn.ANSWER_RIGHT),
-    new QuestionBtn('上一题', QuestionBtn.PREV_QUESTION)
+    // new QuestionBtn('上一题', QuestionBtn.PREV_QUESTION)
   ],
   fail: 'C罗任意球绝杀，xxx成为背景帝',
   result: '你立刻走上前冲C罗耳语几句，C罗在思考片刻后将主罚权让了出来，你想起了之前在球场上的训练和C罗的夸赞，不禁信心倍增，罚出的任意球又快又刁，冲破了特尔施特根的十指关，绝杀了比赛！'
@@ -86,16 +86,16 @@ let BarcelonaQuestion: Array<Question> = [{
     new QuestionBtn('A. 教练邀请怎能不去！', QuestionBtn.ANSWER_RIGHT),
     new QuestionBtn('B. 我和你很熟吗，不去！', QuestionBtn.ANSWER_FAIL)
   ],
-  fail: 'xxx没有在国家德比中出场，半赛季后被甩卖到其他球队'
+  fail: '巴尔韦德的邀请遭到冷拒，xxx与主帅渐生嫌隙，成为球队的“饮水机守护神”'
 }, {
   title: `当天晚上，你如约来到巴尔韦德家，发现大部分球员已经到了，你和队友们一边烤肉一边聊天，气氛十分融洽。<br>
   饭后，梅西邀请你一起在PS4上玩足球游戏，你选择：`,
   btns: [
     new QuestionBtn('A. 球王的邀请怎能不答应！', QuestionBtn.ANSWER_RIGHT),
     new QuestionBtn('B. 太晚了，还是回去休息吧…', QuestionBtn.ANSWER_FAIL),
-    new QuestionBtn('上一题', QuestionBtn.PREV_QUESTION)
+    // new QuestionBtn('上一题', QuestionBtn.PREV_QUESTION)
   ],
-  fail: 'xxx比赛中毫无表现，失去主帅信任',
+  fail: '队友们对你的态度失望透顶，xxx彻底成为队中的边缘人物',
 }, {
   title: `在游戏中，你和梅西一组对抗小白和皮克，你们配合默契，不时在游戏中做出巧妙的配合，最终大比分胜出，旁边的巴尔韦德看着也十分开心。<br>
   到了比赛那天，巴尔韦德安排你打首发，并且悄悄告诉你：就像那天打游戏时一样踢！<br>
@@ -103,7 +103,7 @@ let BarcelonaQuestion: Array<Question> = [{
   btns: [
     new QuestionBtn('A. 传给梅西', QuestionBtn.ANSWER_RIGHT),
     new QuestionBtn('B. 自己来一脚', QuestionBtn.ANSWER_FAIL),
-    new QuestionBtn('上一题', QuestionBtn.PREV_QUESTION)
+    // new QuestionBtn('上一题', QuestionBtn.PREV_QUESTION)
   ],
   fail: 'xxx射门被纳瓦斯奋力扑出，巴萨在国家德比中惨遭失利'
 }, {
@@ -112,7 +112,7 @@ let BarcelonaQuestion: Array<Question> = [{
   btns: [
     new QuestionBtn('A. 安慰队友，鼓励他们再进一球', QuestionBtn.ANSWER_RIGHT),
     new QuestionBtn('B. 抱怨队友的眼神防守。', QuestionBtn.ANSWER_FAIL),
-    new QuestionBtn('上一题', QuestionBtn.PREV_QUESTION)
+    // new QuestionBtn('上一题', QuestionBtn.PREV_QUESTION)
   ],
   fail: '巴萨场上球员互相争吵无心恋战，国家德比草草收场。'
 }, {
@@ -121,7 +121,7 @@ let BarcelonaQuestion: Array<Question> = [{
   btns: [
     new QuestionBtn('A. 再跑一跑，梅西可能会传球！', QuestionBtn.ANSWER_RIGHT),
     new QuestionBtn('B. 有点累，就看梅西进球吧', QuestionBtn.ANSWER_FAIL),
-    new QuestionBtn('上一题', QuestionBtn.PREV_QUESTION)
+    // new QuestionBtn('上一题', QuestionBtn.PREV_QUESTION)
   ],
   fail: '你浪费了最后的绝杀机会，成为舆论的嘲弄对象。',
   result: `果然，梅西把球又给回了你，你没有在犹豫，使出最后的力气再度攻破了球门！<br>
@@ -157,7 +157,7 @@ export class Page3 extends Page {
     this.closeFailBtn = this.DOMAPI.find('.action-btn.close-fail');
     this.successQustionBtn = this.DOMAPI.find('.success-question');
     this.aganElemBtn = this.DOMAPI.find('.again-btn');
-    
+
   }
   initPageEvent(): void{
     this.aganElemBtn.on('click', () => {

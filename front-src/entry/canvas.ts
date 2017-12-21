@@ -27,7 +27,7 @@ export function page4LastImage(imgbasesrc, handle: (base64) => void) {
       if (getUserNameAndTeam().teamSelect == RealMadrid) {
         ctx.drawImage(a, 0, 0, a.naturalWidth, a.naturalHeight, 216, 55, 66, 92);
       } else if (getUserNameAndTeam().teamSelect == Barcelona) {
-        ctx.drawImage(a, 0, 0, a.naturalWidth, a.naturalHeight, 293, 28, 56, 76);
+        ctx.drawImage(a, 0, 0, a.naturalWidth, a.naturalHeight, 280, 28, 56, 76);
       }
       ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);
 

@@ -49,16 +49,17 @@ export class Page5 extends Page {
     imageList.push(base64Image);
 
     let name = getUserNameAndTeam().userName.substring(0, 4);
-    let _txt1 = ('国家德比皇马3-0大胜，全都靠' + name).substring(0, 19)
-    let _txt2 = '';
+    let _txt2 = '', _txt1 = '', otherNews;
 
-    let otherNews = null;
     if(getUserNameAndTeam().teamSelect == RealMadrid){
       otherNews = DomAPI.CreateByHtmlString(`<img src="${assetMap.lastImageNewsRe}">`).getEl(0);
-      _txt2 = `面对巴萨一夜成名，${name}有何话说？`
+      _txt1 = `国家德比皇马3-0大胜，全都靠${name}`;
+      _txt2 = `面对巴萨一夜成名，${name}有何话说？`;
     }else if(getUserNameAndTeam().teamSelect == Barcelona){
       otherNews = DomAPI.CreateByHtmlString(`<img src="${assetMap.lastImageNewsBa}">`).getEl(0);
-      _txt2 = `面对皇马一夜成名，${name}有何话说？`
+      _txt1 = `国家德比${name}绝杀，巴萨2-1皇马`;
+      _txt2 = `面对皇马一夜成名，${name}有何话说？`;
+      
     }
     imageList.push(otherNews);
 
