@@ -58,8 +58,8 @@ export class Page4 extends Page {
     var u = navigator.userAgent;
     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
     if (isAndroid) {
-      this.fileInput.setAttr('capture', 'camera');
-      this.fileInput2.setAttr('capture', 'camera');
+      // this.fileInput.setAttr('capture', 'camera');
+      // this.fileInput2.setAttr('capture', 'camera');
     }
   }
   initPageEvent(): void {
